@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Bill</title>
+</head>
+<body>
+    <h1>Create Bill</h1>
+    <form method="post" action="{% url 'create_bill' %}">
+        {% csrf_token %}
+        <label for="bill_number">Bill Number:</label><br>
+        <input type="text" id="bill_number" name="bill_number"><br>
+        
+        <label for="bill_date">Bill Date:</label><br>
+        <input type="date" id="bill_date" name="bill_date"><br>
+        
+        <label for="buyer">Select Buyer:</label><br>
+        <select id="buyer" name="buyer_id">
+            {% for buyer in buyer %}
+                <option value="{{ buyer.id }}">{{ buyer.buyer_name }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="seller">Select Seller:</label><br>
+        <select id="seller" name="seller_id">
+            {% for seller in seller %}
+                <option value="{{ seller.id }}">{{ seller.seller_name }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="items">Select Items:</label><br>
+        <select id="items" name="item_ids" multiple>
+            {% for item in item %}
+                <option value="{{ item.id }}">{{ item.item_name }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="total_quantity">Total Quantity:</label><br>
+        <input type="text" id="total_quantity" name="total_quantity"><br>
+        
+        <label for="total_amount">Total Amount:</label><br>
+        <input type="text" id="total_amount" name="total_amount"><br>
+        
+        <input type="submit" value="Create Bill">
+    </form>
+</body>
+</html>

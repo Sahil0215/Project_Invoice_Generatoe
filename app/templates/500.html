@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .error-container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 4em;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.2em;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Sorry - Please check your entries</h1>
+        <p>Oops! Looks like the bill you're looking for had some blank fields. Espesially Date, Item count and details.</p>
+        <p>Go back to <a href="{% url 'generate'%}">Generate Bill</a>.</p>
+    </div>
+</body>
+</html>
