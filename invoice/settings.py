@@ -80,6 +80,11 @@ WSGI_APPLICATION = 'invoice.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.dummy',
+    }
+}
 
 
 # Password validation
